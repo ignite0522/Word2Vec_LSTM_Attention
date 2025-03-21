@@ -18,9 +18,9 @@
 
 举个简单的例子：
 
-假设一个长度为m的句子，包含这些词：![(w_1,w_2,w_3,..,w_m)](assets/8LaFPhxHgewmcBr.png)，那么这个句子的概率（也就是这![m](assets/HC6lhfLuqPrazgF.png)个词共现的概率）是：
+假设一个长度为m的句子，包含这些词：![(w_1,w_2,w_3,..,w_m)](https://s2.loli.net/2025/03/21/F4xUOtwWlBRIZcN.png)，那么这个句子的概率（也就是这![m](https://s2.loli.net/2025/03/21/nx9OPK1bo6GphLR.png)个词共现的概率）是：
 
-![img](assets/skwUOIXWf9RHT7F.png)
+![img](https://s2.loli.net/2025/03/21/s7IVSKgcPOQrap3.png)
 
 
 
@@ -46,15 +46,15 @@ N-gram 模型计算两种句子的概率：
 
 当 n=1, 一个一元模型（unigram model)即为 ：（这是一个特殊情况，只考虑单个单词出现的概率）
 
-![img](assets/uRbKyoYzVavtflL.png)
+![img](https://s2.loli.net/2025/03/21/mMSse897pLBQvxd.png)
 
 当 n=2, 一个二元模型（bigram model)即为 ：
 
-![img](assets/2MdOFhGs7v6V1ty.png)
+![img](https://s2.loli.net/2025/03/21/EIMAhc2xWi68eRU.png)
 
 当 n=3, 一个三元模型（[trigram model](https://zhida.zhihu.com/search?content_id=5320991&content_type=Article&match_order=1&q=trigram+model&zhida_source=entity))即为
 
-![img](assets/QzdrcMmWPTx2fp8.png)
+![img](https://s2.loli.net/2025/03/21/xqE2lMHk8fQNJup.png)
 
 
 
@@ -62,7 +62,7 @@ N-gram 模型计算两种句子的概率：
 
 举个例子：假设我们有个语料库，我们对词语进行构建二元关系
 
-<img src="assets/ajdPzpc5KlRTEs8.png" alt="img" style="zoom: 200%;" />
+<img src="https://s2.loli.net/2025/03/21/4DNI8wa1p3XrhTs.png" alt="img" style="zoom: 200%;" />
 
 其中第一行，第二列 表示给定前一个词是 “i” 时，当前词为“want”的情况一共出现了827次
 
@@ -70,7 +70,7 @@ N-gram 模型计算两种句子的概率：
 
 据此，我们便可以算得相应的频率分布表如下。
 
-<img src="assets/e1iT5VxEMZq3YCU.png" alt="img" style="zoom:200%;" />
+<img src="https://s2.loli.net/2025/03/21/hnGmJksIdbcoWAR.png" alt="img" style="zoom:200%;" />
 
 比如，前一个单词是i，那么下一个单词是want的概率为0.33，下一个单词是eat的概率是0.0036
 
@@ -80,7 +80,7 @@ N-gram 模型计算两种句子的概率：
 
 你在用谷歌时，输入一个或几个词，**搜索框通常会以下拉菜单的形式给出几个像下图一样的备选，这些备选其实是在猜想你想要搜索的那个词串。**
 
-![img](assets/f5GAyrQTvWPCRp9.png)
+![img](https://s2.loli.net/2025/03/21/6pWOgaGb2erI9dz.png)
 
 这其实就是以N-Gram模型为基础来实现的
 
@@ -128,7 +128,7 @@ word2vec就横空出世了
 
 word2vec包含三层：输入层、隐藏层、输出层，**通过从输入层到隐藏层或隐藏层到输出层的权重矩阵去向量化表示词的输入，学习迭代的是两个权重矩阵**，如下图：
 
-![img](assets/GqkKrdnSTmQC8bR.png)
+![img](https://s2.loli.net/2025/03/21/qD1UIvJjSwpFgi7.png)
 
 
 
@@ -149,13 +149,13 @@ coffee：    ？
 everyday： [0,0,0,1]
 ```
 
-![img](assets/8kzhecL274snQSB.png)
+![img](https://s2.loli.net/2025/03/21/9ehBwVqCxNpzP4u.png)
 
 
 
 2.然后将 one-hot 表征结果[1,0,0,0]、[**0,1,0,0**]、[0,0,0,1]，分别乘以：3×4的输入层到隐藏层的权重矩阵W「这个矩阵也叫嵌入矩阵，可以随机初始化生成」
 
-![img](assets/nLbDq5oa9rRwBmX.png)
+![img](https://s2.loli.net/2025/03/21/air6K7u4tkg9JnO.png)
 
 到这里可以看到，维度已经减下来了，这还不明显，如果词典中的单词为上万个，那一下压缩到几百个就明显了
 
@@ -167,21 +167,21 @@ everyday： [0,0,0,1]
 
 3.将得到的结果向量求平均作为隐藏层向量：[1, 1.67, 0.33]
 
-![img](assets/9gRKv6JWLz8qorp.png)
+![img](https://s2.loli.net/2025/03/21/NLRO1lHaAJvF2Cw.png)
 
 
 
 
 
-4.然后将隐藏层[1, 1.67, 0.33]向量乘以：4×3的隐藏层到输出层的权重矩阵![W'](assets/ovcauxJZAHq6SBr.png)「这个矩阵也是嵌入矩阵，也可以初始化得到」，得到输出向量：[4.01, 2.01, 5.00, 3.34]
+4.然后将隐藏层[1, 1.67, 0.33]向量乘以：4×3的隐藏层到输出层的权重矩阵![W'](https://s2.loli.net/2025/03/21/byWdkFSHNMvaTIL.png)「这个矩阵也是嵌入矩阵，也可以初始化得到」，得到输出向量：[4.01, 2.01, 5.00, 3.34]
 
-![img](assets/uwkKHXL5U4oSzJP.png)
+![img](https://s2.loli.net/2025/03/21/iRwPGleo3NLhv9k.png)
 
 
 
 5.最后对输出向量[4.01, 2.01, 5.00, 3.34] 做 softmax 激活处理得到实际输出[0.23, 0.03, 0.62, 0.12]，并将其与真实标签[0, 0, 1, 0]做比较，然后基于损失函数做梯度优化训练
 
-![img](assets/lJYgmxOXS6haptV.png)
+![img](https://s2.loli.net/2025/03/21/2P9U73NypTFEeAu.png)
 
 
 
@@ -189,7 +189,7 @@ everyday： [0,0,0,1]
 
 最后还给出了完整图
 
-![img](assets/jPcfN9Gyh738HrD.png)
+![img](https://s2.loli.net/2025/03/21/l6OIHz7fFGqa15p.png)
 
 
 
@@ -199,7 +199,7 @@ everyday： [0,0,0,1]
 
 那效果如何呢？为了方便展示，这里有一张将128维压缩成2维的图
 
-![img](assets/Oo2vZpt1crBqs3N.png)
+![img](https://s2.loli.net/2025/03/21/nTkAFHDyCzP3K7M.png)
 
 可以看到意思相近或者词性相同的词语之间的距离很近
 
@@ -365,7 +365,7 @@ print(f"\n词向量的维度是：{vector_size}")
 
 看看结果
 
-![image-20250103160823792](assets/Zb32rMSnRJTQ5NE.png)
+![image-20250103160823792](https://s2.loli.net/2025/03/21/SA7IswWYROocXkT.png)
 
 
 
@@ -623,7 +623,7 @@ Embedding(
 
 最后来看看效果吧！
 
-![image-20250103171601975](assets/VeXfEjYGPWrB9LZ.png)
+![image-20250103171601975](https://s2.loli.net/2025/03/21/i3wBWDesH7dpPbL.png)
 
 有76%的正确率
 
@@ -781,7 +781,7 @@ LSTM(128, return_sequences=False),  # 第二层 LSTM，不返回序列
 
 看看效果
 
-![image-20250103172548843](assets/4ILCflSpveNOgkh.png)
+![image-20250103172548843](https://s2.loli.net/2025/03/21/atc89dbr7Kq5VNk.png)
 
 提升了5%
 
@@ -968,7 +968,7 @@ if __name__ == "__main__":
 
 看看效果
 
-![截屏2025-01-03 17.30.04](assets/TzUeW6Bm5gh8JuE.png)
+![截屏2025-01-03 17.30.04](https://s2.loli.net/2025/03/21/sAubPOorleyGYSc.png)
 
 又提高1%
 
@@ -994,11 +994,11 @@ if __name__ == "__main__":
 
 单层：
 
-![截屏2025-01-03 17.42.31](assets/trmSo52cHQAnlfK.png)
+![截屏2025-01-03 17.42.31](https://s2.loli.net/2025/03/21/8VNohSgbBKt2k9F.png)
 
 双层：
 
-![image-20250103174436165](assets/qI9rS6awXmYQR2k.png)
+![image-20250103174436165](https://s2.loli.net/2025/03/21/k3W4TehYgS8doXb.png)
 
 
 
@@ -1055,13 +1055,13 @@ val_accuracy：对**验证集**的准确率
 
 准确率竟然提高了
 
-![image-20250103175801206](assets/h8JRVHsob9qWYct.png)
+![image-20250103175801206](https://s2.loli.net/2025/03/21/PIARcvYSVdm163J.png)
 
 
 
 再看看训练过程：
 
-![image-20250103180055914](assets/RBHNh1xCwzc9TFM.png)
+![image-20250103180055914](https://s2.loli.net/2025/03/21/Q49BseUdZuzXq6l.png)
 
 对比之前的单层LSTM，效果明显变好
 
