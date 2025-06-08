@@ -1086,4 +1086,4 @@ val_accuracy：对**验证集**的准确率
 
 
 
-## **再说简单一点就是`LSTM → Attention → LSTM` 通过早期引入 Attention 聚焦关键信息，减少了特征冗余和信息丢失问题，同时提高了计算效率**
+ **再说简单一点就是`LSTM → Attention → LSTM` 通过早期引入 Attention 聚焦关键信息，减少了特征冗余和信息丢失问题，同时提高了计算效率**
