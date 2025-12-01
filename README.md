@@ -1,5 +1,7 @@
 # Word2Vec+LSTM+Attention恶意评论识别
 
+可以移步到freebuf看这篇文章  https://www.freebuf.com/articles/network/419072.html
+
 
 
 接着上篇文章遗留的问题，学学word2vec，试着来解决一下
